@@ -1,0 +1,118 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block context %}
+  <!-- Home Design Inner Pages -->
+  <div class="ulockd-inner-home">
+    <div class="container text-center">
+      <div class="row">
+        <div class="inner-conraimer-details">
+          <div class="col-md-12">
+            <h1 class="text-uppercase">Blog</h1>
+
+            <div class="input-group search-container mt-5">
+    <form action="/action_page.php" class="searchbox67">
+      <input class="form-control searchbox" id="search" type="text" placeholder="Search.." onkeyup="searchFun()" name="search">
+      <button class="searchbtn89" ><i class="fa fa-search searchbtn"></i></button>
+    </form>
+  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Home Design Inner Pages -->
+  <section class="ulockd-ip-latest-news">
+    <div class="container">
+      <div class="row" id="blog_id">
+       
+ 
+      </div>
+    </div>
+  </section>
+
+<script type="text/javascript">
+
+var base_url = window.location.origin;
+  var searchtext = "";
+
+window.onload = AllBlog(searchtext);
+
+function searchFun() 
+{
+let data = document.getElementById('search').value;
+this.searchtext = data;
+console.warn(data)
+AllBlog(searchtext);
+    }
+
+async function AllBlog(searchtext)
+{
+  console.warn("this is all blog")
+  let search_text =  searchtext;
+let url = `${base_url}/all-blog-api/?search=${search_text}`;
+
+const response = await fetch(url, 
+{
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'multipart/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    // body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  // return response.json()
+let res = await response.json();
+console.warn(res);
+let html = '';
+for (i =0 ; i < res.blog.length ; i++)
+{
+
+html += ` <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 ulockd-ext-spc">
+          <div class="ulockd-bp-thumb" >
+           
+            <img class="img-responsive img-whp" src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/media/${res.blog[i].banner_image}" alt="5.jpg">
+          </div>
+          <div class="ulockd-bp-details style2">
+            <div class="ulockd-bp-details">
+              <h3 class="ulockd-bp-title">${res.blog[i].title}</h3>
+        
+              <div class="ulockd-bpost" >
+                <p>${res.blog[i].short_description}<a class="ulockd-bp-btn" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/blog-view/${res.blog[i].id}/">Read More</a></p>
+              </div> <br>
+              <ul class="list-inline">
+                <li><a href="#"> <i class="fa fa-calendar text-thm1"> </i> ${res.blog[i].create_at}</a></li>
+                <li><a href="#"> |</a></li>
+                <li><a href="#"> <i class="fa fa-comment-o text-thm1"> </i>${res.blog[i].comment} </a></li>
+                <li><a href="#"> |</a></li>
+                <li><a href="#"> <i class="fa fa-thumbs-up text-thm1"> </i> ${res.blog[i].rating}</a></li>
+                
+                
+              </ul>
+            </div>
+          </div>
+        </div>`
+
+
+}
+
+
+
+document.getElementById('blog_id').innerHTML = html;
+}
+
+
+
+</script>
+  
+{% endblock %}

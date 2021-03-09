@@ -1,0 +1,139 @@
+/* Initialize Variables */
+/* Unlockd Project Color */
+body {
+  background-color: #111111;
+  color: #ffffff; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #eeeeee !important; }
+  h1 small,
+  h1 .small, h2 small,
+  h2 .small, h3 small,
+  h3 .small, h4 small,
+  h4 .small, h5 small,
+  h5 .small, h6 small,
+  h6 .small,
+  .h1 small,
+  .h1 .small, .h2 small,
+  .h2 .small, .h3 small,
+  .h3 .small, .h4 small,
+  .h4 .small, .h5 small,
+  .h5 .small, .h6 small,
+  .h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #eeeeee !important; }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+  .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+    color: #eeeeee !important; }
+
+.dropdown-content {
+  background-color: gray; }
+
+.header-middle,
+.our-shop,
+.ulockd-testimonial,
+.ulockd-blog,
+.ulockd-ffact-one {
+  background-color: transparent !important; }
+
+.header-nav .main-header-nav.navbar-scrolltofixed {
+  background-color: #111111; }
+
+.ulockd-ffact-one {
+  border: 1px solid #bbbbbb; }
+
+.ulockd-ffact-one p,
+.timer {
+  color: #ffffff !important; }
+
+nav.navbar.bootsnav.menu-style1 ul.nav li a.active,
+nav.navbar.bootsnav.menu-style1 ul.nav li a:hover,
+nav.navbar.bootsnav.menu-style1 ul.nav li a:focus,
+nav.navbar.bootsnav li.dropdown ul.dropdown-menu li a:hover,
+nav.navbar.bootsnav li.dropdown ul.dropdown-menu li a:focus {
+  color: #ffffff !important; }
+
+nav.navbar.bootsnav ul.nav li a.active,
+nav.navbar.bootsnav ul.nav li a:hover,
+nav.navbar.bootsnav ul.nav li a:focus {
+  color: #bbbbbb !important; }
+
+.fixedup .navbar-scrolltofixed.scroll-to-fixed-fixed,
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  background-color: #111111; }
+
+nav.navbar.bootsnav,
+nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
+  background-color: #111111; }
+
+nav.navbar.bootsnav.menu-style1 ul.nav li a {
+  color: #bbbbbb !important; }
+
+nav.singlepage-dark,
+.multipage-dark {
+  background-color: #111111 !important; }
+
+.ulockd-divider-thumb {
+  background-color: #DCDCDC !important; }
+
+form.ulockd-login-form, form.ulockd-reg-form {
+  background-color: gray; }
+
+@media only screen and (max-width: 992px) {
+  .ulockd-main-logo2 > img {
+    margin-top: 10px; }
+
+  .bgc-rdark {
+    background-color: #111111 !important; } }
+@media only screen and (max-width: 992px) {
+  nav.menu-style1,
+  nav.navbar.bootsnav .navbar-toggle {
+    background-color: transparent !important; } }
+.our-service {
+  background-color: darkgreen; }
+
+.coin-wallet.well,
+.bgc-white,
+.bgc-snowshade2,
+.signup_form {
+  background-color: #111111; }
+
+.testimonial-grid.slick-current.slick-center,
+.ulockd-btn-white,
+.blog_post .thumb .overlay,
+.testimonial-grid,
+.img-box,
+.team_member,
+.blog_post,
+.search-box {
+  background-color: darkcyan; }
+
+.bgc-whitef5,
+.icon-box3,
+.bgc-whitef6,
+.bgc-whitef3,
+.service-two,
+.ficon-box,
+.team-one {
+  background-color: transparent !important; }
+
+.bp-details {
+  background-color: transparent !important;
+  border: 1px solid #bbbbbb; }
+
+.color-black33 {
+  color: #ffffff !important; }
+
+form.appointment_form,
+.footer-fst-col p,
+.twitter.style2 ul li,
+.ftr-phone,
+.ftr-fax,
+.ftr-mail,
+.footer-contact p {
+  color: gray; }
+
+/*# sourceMappingURL=dark.css.map */

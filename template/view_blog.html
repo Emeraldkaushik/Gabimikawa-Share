@@ -1,0 +1,334 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block context %}
+  <!-- Inner Pages Main Section -->
+  <section class="ulockd-service-details">
+    <div class="container"> 
+      <div class="col-md-12 col-lg-12 blogpage">
+        <div class="row">
+          <div class="col-md-12 ulockd-mrgn1210">
+            <div class="ulockd-project-sm-thumb">
+                          {% thumbnail blog.banner_image "900x480" crop="center" as im %}
+    <img class="img-responsive img-whp" src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ im.url }}" class="img-responsive img-whp"  width="{{ im.width }}" height="{{ im.height }}">
+{% endthumbnail %}
+
+              <!-- <img class="img-responsive img-whp" src="{% static 'images/blog/blog-details.jpg' %}" alt=""> -->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 ulockd-mrgn1210">
+            <div class="ulockd-pd-content">
+              <div class="ulockd-bp-date">
+                <ul class="list-inline">
+                  <li class="ulockd-bp-date-innner">On <a href="#">{{blog.create_at}}</a></li>
+                  <!-- <li class="ulockd-bp-comment"><a href="#"><span class="flaticon-nurse-head text-thm1"></span> Ana D Cruse</a></li> -->
+                  <li class="ulockd-bp-comment"><a href="#"><span class="flaticon-chat text-thm1"></span><span id="count"></span> Comment</a></li>
+                  
+                </ul>
+              </div>
+              <h3>{{blog.title}}</h3>
+              <p class="project-dp-one">{{blog.content|safe|escape}}</p>
+            </div>
+          </div>
+          <div class="col-md-12 ulockd-mrgn1210">
+            <div class="ulockd-bpd-thumb">
+              <!-- <img class="img-responsive img-whp" src="images/blog/blog-details2.jpg" alt="blog-details2.jpg"> -->
+              {% for j in video %}
+
+{{ j.video |safe }}
+
+            <!--   <iframe width="560" height="315" src="https://www.youtube.com/embed/RFx4g4GunYw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+           
+{% endfor %}
+            </div>
+            <div class="row">
+              {% for i in image %}
+              <div class="col-md-6">
+                              {% thumbnail i.image "466x280" crop="center" as im %}
+              
+    <img class="img-responsive img-whp" src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ im.url }}" class="img-responsive img-whp"  width="{{ im.width }}" height="{{ im.height }}">
+{% endthumbnail %}
+<!-- 
+                <img class="img-responsive img-whp" src="{% static 'images/blog/blog-details4.jpg' %}" alt="blog-details4.jpg">
+              </div>
+              <div class="col-md-6">
+                <img class="img-responsive img-whp" src="{% static 'images/blog/blog-details5.jpg' %}" alt="blog-details5.jpg">
+              </div> -->
+            </div>
+{% endfor %}
+            <br>
+           <!--  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> -->
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="ulockd-bp-single">
+              <h2 class="ulockd-bps-title">Comment</h2>
+              <div id="leavecommentdisplay">
+             <!--  <div class="ulockd-bps-first">
+                <div class="media">
+                    <div class="media-left pull-left">
+                      <a href="#">
+                        <img class="media-object thumbnail1" src="{% static 'images/profile.jpg' %}" alt="profile.jpg">
+
+
+                      <a href="#"> <i class="fa fa-star checked text-thm1"> </i><i class="fa fa-star checked text-thm1"> </i>
+                      <i class="fa fa-star checked text-thm1"> </i><i class="fa fa-star text-thm1"> </i><i class="fa fa-star text-thm1"> </i></a>
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">Aaaa Porter <span class="ulockd-bps-date pull-right"> Posted on Jun 12, 2015</span> </h4>
+                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have u form, by injected humour, amr song bangla ami otami</p>
+                      <a class="text-thm1" href="#"> Reply </a>
+                    </div>
+                </div>
+              </div> -->
+
+          <!--     <div class="ulockd-bps-second">
+                <div class="media">
+                    <div class="media-left pull-left">
+                      <a href="#">
+                        <img class="media-object thumbnail1" src="{% static 'images/profile.jpg' %}" alt="2.jpg">
+
+
+                      <a href="#"> <i class="fa fa-star checked text-thm1"> </i> <i class="fa fa-star checked text-thm1"> </i> <i class="fa fa-star checked text-thm1"> </i><i class="fa fa-star checked text-thm1"> </i><i class="fa fa-star text-thm1"> </i></a>
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">Steven Pppp <span class="ulockd-bps-date pull-right"> Posted on Jun 12, 2015</span> </h4>
+                      <p>There are many variations of passages of Lorem Ipsum available, but he majority have uform, by injected</p>
+                      <a class="text-thm1" href="#"> Reply </a>
+                    </div>
+                </div>
+              </div> -->
+ <!--              <div class="ulockd-bps-first">
+                <div class="media">
+                    <div class="media-left pull-left">
+                      <a href="#">
+                        <img class="media-object thumbnail1" src="{% static 'images/profile.jpg' %}" alt="3.jpg">
+                      </a>
+
+                      <a href="#"> <i class="fa fa-star checked text-thm1"> </i> <i class="fa fa-star checked text-thm1"> </i><i class="fa fa-star checked text-thm1"> </i><i class="fa fa-star text-thm1"> </i><i class="fa fa-star text-thm1"> </i></a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">Ssss Porter <span class="ulockd-bps-date pull-right"> Posted on Jun 12, 2015</span> </h4>
+                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have u form, by injected humour, amr song bangla ami otami</p>
+                      <a class="text-thm1" href="#"> Reply </a>
+                    </div>
+                </div>
+              </div>  -->    
+              </div>                 
+                          <form name="contact_form" class="ulockd-bps-contact-form" id="myForm" novalidate="novalidate">
+                            <div class="ulockd-bps-contact-form">
+                              <h2>Leave a comment</h2>
+                            </div>
+                              <div class="messages"></div>
+
+
+                                      <div class="form-group">
+                                          <input id="name" name="name" class="form-control ulockd-form-bps required" placeholder="Name" required="required" data-error="Name is required." type="text">
+                                          <div class="help-block with-errors"></div>
+                                      </div>
+                                  
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <input id="phone" name="phone_no" class="form-control ulockd-form-bps required" placeholder="Phone No" required="required" data-error="Phone No. is required." type="text">
+                                          <div class="help-block with-errors"></div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <input id="email" name="email" class="form-control ulockd-form-bps required email" placeholder="Email" required="required" data-error="Email is required." type="email">
+                                          <div class="help-block with-errors"></div>
+                                      </div>
+                                  </div>  
+                                  <div class="col-md-12">
+                                  <div class="form-group">
+                                      <textarea id="message" name="form_message" class="form-control ulockd-bps-textarea required" rows="5" placeholder="Massage" required="required" data-error="Message is required."></textarea>
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+
+                                   <div class=" starratinggg">
+
+                                 
+                     <fieldset class="rating" id='rating'>
+                      <span class="rateustxt">Rate Us : </span> 
+                      <input type="radio" id="star5" name="rating" onclick="ratefuntion(5)" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                       <input type="radio" id="star4" name="rating" onclick="ratefuntion(4)" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label> 
+                       <input type="radio" id="star3" name="rating" onclick="ratefuntion(3)" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label> 
+                       <input type="radio" id="star2" name="rating" onclick="ratefuntion(2)" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label> 
+                       <input type="radio" id="star1" name="rating" onclick="ratefuntion(1)" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                    </fieldset>
+                     </div> </div>
+
+                                  <div class="form-group">
+                                      <input id="form_botcheck" name="form_botcheck" class="form-control" value="" type="hidden">
+                                      <button type="button" class="btn btn-default btn-lg ulockd-btn-thm2" data-loading-text="Getting Few Sec..." onclick="LeaveCommentPost()">SUBMIT</button>
+                                  </div>
+                                  </div> 
+                              </div>
+                          </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+<!-- Wrapper End -->
+<!--  -->
+<script type="text/javascript">
+var base_url = window.location.origin;
+let id = '{{blog.id}}';
+var rate =0;
+function ratefuntion(val){
+  rate = val;
+  console.warn(rate);
+}
+async function LeaveCommentPost()
+{
+let rating = rate;  
+let email = document.getElementById('email').value;
+let phone = document.getElementById('phone').value;
+let message = document.getElementById('message').value;
+let name = document.getElementById('name').value;
+
+
+
+
+let data = {
+  message : message,
+  star:rating,
+  mobile :phone,
+  email:email,
+  name : name
+}
+console.warn(data);
+console.warn('Leave comment function');
+
+let url = `${base_url}/leave-comment-post/${id}/`
+    // let data = {}
+const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'multipart/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  // return response.json()
+let res = await response.json();
+console.warn(res)
+LeaveCommenGet();
+
+}  
+
+window.onload = LeaveCommenGet();
+
+async function LeaveCommenGet()
+{
+
+let id = '{{blog.id}}';
+let url = `${base_url}/leave-comment/${id}/`
+    // let data = {}
+const response = await fetch(url, {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'multipart/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    // body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  // return response.json()
+let res = await response.json();
+console.warn(res)
+document.getElementById('count').innerHTML = res.count;
+
+let html = '';
+for (i = 0; i < res.data.length; i++) 
+{
+let rating = '';
+
+
+let starts = 5 - parseInt(res.data[i].star)
+console.warn('unactive start', starts);
+      console.warn('start ',res.data[i].star);
+
+
+for (j =0 ; j < res.data[i].star ; j++)
+{
+
+
+rating += `
+<i class="fa fa-star checked text-thm1"> </i>`
+}
+
+for (k =0 ; k < starts ; k++){
+rating += `<i class="fa fa-star text-thm1"> </i>
+`
+}
+
+
+      html += `<div class="ulockd-bps-first">
+                <div class="media">
+                    <div class="media-left pull-left">
+                      <a href="#">
+                        <img class="media-object thumbnail1" src="{% static 'images/anonymous.jpg' %}" alt="profile.jpg">
+
+
+                      <a href="#">`
+
+
+     // rating = ` <i class="fa fa-star checked text-thm1"> </i>
+     //           <i class="fa fa-star checked text-thm1"> </i>
+     //          <i class="fa fa-star checked text-thm1"> </i>
+     //          <i class="fa fa-star text-thm1"> </i>
+     //          <i class="fa fa-star text-thm1"> </i>`
+html += rating +
+                      `</a></a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">${res.data[i].name} <span class="ulockd-bps-date pull-right"> Posted on ${res.data[i].created_at}</span> </h4>
+                      <p>${res.data[i].comment}</p>
+                    
+                    </div>
+                </div>
+              </div>
+`
+
+
+}
+
+
+
+document.getElementById('leavecommentdisplay').innerHTML = html;
+// let email = document.getElementById('email').value = "";
+// let phone = document.getElementById('phone').value= "";
+// let message = document.getElementById('message').value= "";
+// let name = document.getElementById('name').value= "";
+document.getElementById("myForm").reset();
+
+}
+
+
+
+</script>
+{% endblock %}
